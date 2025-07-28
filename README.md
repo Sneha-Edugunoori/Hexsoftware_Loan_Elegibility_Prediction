@@ -1,93 +1,116 @@
-# 🧠 Loan Eligibility Prediction — ML Web App Project
+# 🧠 Loan Eligibility Prediction (ML Project)
 
-This project helped me learn and apply the **complete lifecycle of a machine learning model**, right from **data cleaning** to **deployment using Flask**. It uses real-world loan data to predict whether a loan applicant is **eligible or not**, based on multiple input features.
-
----
-
-## 👣 What I Learned in This Project
-
-### 1️⃣ Data Preprocessing  
-- Loaded dataset using `pandas` and explored it for missing or inconsistent values  
-- Cleaned the dataset by filling null values (like `LoanAmount`, `Self_Employed`, `Credit_History`)  
-- Converted categorical variables (e.g., `Gender`, `Married`, `Education`) into numerical format  
-- Applied **log transformation** to skewed features like `ApplicantIncome` and `LoanAmount`  
-
-### 2️⃣ Feature Engineering  
-I created additional meaningful features to improve model performance:  
-- `Total_Income = ApplicantIncome + CoapplicantIncome`  
-- `Debt_to_Income = LoanAmount / Total_Income`  
-- Created binary indicators like `Has_Dependents`  
-- Applied log scaling to continuous fields for normalization  
-
-### 3️⃣ Model Building & Comparison  
-I experimented with different algorithms and compared their accuracy:
-- ✅ **Logistic Regression**  
-- ✅ **Random Forest Classifier**  
-- ✅ **XGBoost Classifier** *(Best performance)*  
-
-### 4️⃣ Model Evaluation  
-- Used `train_test_split` for splitting data  
-- Evaluated models using:
-  - Accuracy Score  
-  - Confusion Matrix  
-  - Classification Report (Precision, Recall, F1 Score)
+This is a machine learning project where I learned and applied concepts from **data cleaning** to **model training**, and finally created a **Flask web app** that predicts whether a person is eligible for a loan.
 
 ---
 
-## 🌐 Web App Interface using Flask
+## 👣 My Learning Journey
 
-I built a **web-based form** using HTML + Flask backend to allow users to input loan details and get an instant prediction.
+### 🔹 1. Data Cleaning
+- Loaded the dataset using `pandas`
+- Handled missing values in `LoanAmount`, `Self_Employed`, and `Credit_History`
+- Encoded categorical values like `Gender`, `Education`, `Married`
+- Applied **log transformation** to skewed features such as `ApplicantIncome` and `LoanAmount`
 
-### 🔹 Input Fields
-- Gender  
-- Married  
-- Education  
-- Self Employed  
-- Applicant Income (log value)  
-- Coapplicant Income (log value)  
-- Loan Amount (log value)  
-- Loan Term  
-- Credit History  
+### 🔹 2. Feature Engineering
+- Created new features:
+  - `Total_Income = Applicant + Coapplicant`
+  - `Debt_to_Income = LoanAmount / TotalIncome`
+  - `Has_Dependents` as a binary field
+- Used log scale for continuous fields to reduce skewness
 
-### 🔹 Output  
-Displays:  
-> `"Eligible ✅"` or `"Not Eligible ❌"`  
-based on the prediction from the trained ML model
+### 🔹 3. Model Building
+Tested the following ML algorithms:
+- ✅ Logistic Regression
+- ✅ Decision Tree
+- ✅ Random Forest
+- ✅ **XGBoost Classifier** *(Best accuracy)*
+
+### 🔹 4. Model Evaluation
+- Used `train_test_split` for data division (80% training, 20% testing)
+- Evaluated with:
+  - Accuracy Score
+  - Confusion Matrix
+  - Classification Report
+
+---
+
+## 🌐 Web App Using Flask
+
+I built a simple UI using **Flask** where users can input loan application details and check loan eligibility instantly.
+
+### 🔹 Input Fields:
+- Gender
+- Married
+- Education
+- Self Employed
+- Property Area
+- Dependents
+- Applicant Income
+- Coapplicant Income
+- Loan Amount
+- Loan Term
+- Credit History
+
+### 🔹 Output:
+<img width="346" height="80" alt="image" src="https://github.com/user-attachments/assets/026cff26-f037-43fb-b9c2-2d5588f4e054" />
+<img width="415" height="169" alt="image" src="https://github.com/user-attachments/assets/d9d5b7f6-e34f-4f32-8d07-df37bf3ff020" />
+
+
+
+---
+
+## 🖼️ Project Visuals
+
+👉 **Model Accuracy Comparison**  
+*(Upload this image and paste its Markdown link below)*  
+`![Model Accuracy](model_accuracy_comparison.png)`
+
+👉 **XGBoost Classification Report**  
+`![XGBoost Report](xgboost_classification_report.png)`
+
+👉 **Precision / Recall / F1 Score**  
+`![Metrics](metrics_table.png)`
+
+📌 _To show these images on GitHub, just drag and drop them into this README while editing, or upload them and use the image URLs here._
 
 ---
 
 ## 🚀 How to Run This Project
 
-1. Clone this repository  
-2. Create a virtual environment  
-3. Install required packages:  
+```bash
+# Step 1: Clone the repo
+git clone https://github.com/your-username/loan-eligibility-prediction.git
+cd loan-eligibility-prediction
+
+# Step 2: Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate  # On Windows
+
+# Step 3: Install dependencies
 pip install -r requirements.txt
-4. Run the Flask app:
-5. Open your browser at:  
-[http://localhost:5000](http://localhost:5000)
 
----
+# Step 4: Run Flask app
+python app.py
 
-## 🛠 Tools & Technologies Used
+# Step 5: Visit in browser
+http://localhost:5000
 
-- Python  
-- Pandas, NumPy  
-- Scikit-learn  
-- XGBoost  
-- Flask  
-- HTML & CSS  
+🛠 Tools & Tech Used
+Python 🐍
 
----
+Pandas, NumPy
 
-## 📂 Project Structure
-├── app.py # Flask backend
-├── templates/
-│ └── index.html # Input form UI
-├── loan_model.pkl # Trained ML model (XGBoost)
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+Scikit-learn
 
-## 🙋‍♀️ Created By  
-**Sneha Edugunoori**  
-[GitHub Profile](https://github.com/Sneha-Edugunoori)
+XGBoost
+
+Flask (for backend)
+
+HTML & CSS (for frontend)
+
+🙋‍♀️ Created By
+Sneha Edugunoori
+GitHub Profile
+
 
